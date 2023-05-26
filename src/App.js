@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Compteur from "./components/Compteur";
 
 function App() {
     const [number, setNumber] = useState(0);
@@ -13,10 +14,12 @@ function App() {
     };
     return (
         <div className="App">
-            <h1>{number}</h1>
-            <button onClick={() => subtract()}>-</button>
-            <button onClick={() => reset()}>Reset</button>
-            <button onClick={() => add()}>+</button>
+            <Compteur
+                number={number}
+                subtract={subtract}
+                reset={reset}
+                add={add}
+            />
         </div>
     );
 }
